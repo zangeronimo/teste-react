@@ -1,0 +1,113 @@
+#contact_list {
+  margin: 0 auto;
+}
+
+#contact_list .table {
+  margin: 0 0 3.6rem 0;
+  width: 100%;
+  box-shadow: 0 0.1rem 0.3rem #00000033;
+  display: table;
+  color: #4d4b4b;
+}
+
+#contact_list .row {
+  display: table-row;
+  background: #f6f6f6;
+}
+#contact_list .row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+#contact_list .row.header {
+  font-weight: 900;
+  color: #e4e0e0;
+  background-color: #9d9c9e;
+}
+
+#contact_list .cell {
+  padding: 0.6rem 1.2rem;
+  display: table-cell;
+}
+
+#contact_list .tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact_list .tools button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin: 0 0.5rem;
+  border: 0;
+  color: #747171;
+  border-radius: 1rem 0;
+}
+
+#contact_list .edit:hover {
+  background: #639d7d;
+  color: #e7e3e3;
+}
+
+#contact_list .remove:hover {
+  background: #ec8b8b;
+  color: #e7e3e3;
+}
+
+#contact_list .center {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  #contact_list .table {
+    display: block;
+  }
+
+  #contact_list .row {
+    padding: 1rem 0 0.5rem;
+    display: block;
+  }
+  #contact_list .row.header {
+    padding: 0;
+    height: 0.6rem;
+  }
+  #contact_list .row.header .cell {
+    display: none;
+  }
+  #contact_list .row .cell {
+    margin-bottom: 1rem;
+  }
+  #contact_list .row .cell:before {
+    margin-bottom: 0.3rem;
+    content: attr(data-title);
+    min-width: 9.8rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #969696;
+    display: block;
+  }
+
+  #contact_list .cell {
+    padding: 0.2rem 1.6rem;
+    display: block;
+  }
+
+  #contact_list .tools {
+    width: max-content;
+    padding: 0;
+    margin: 0;
+  }
+
+  #contact_list .tools button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+    margin: 0 0.5rem;
+    border: 0;
+  }
+}
