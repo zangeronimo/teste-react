@@ -27,31 +27,35 @@
 ## Cronograma de desenvolvimento
 
   ### Backend
-    - Title                                   Time        Status
-    - Estudo da tecnologia NET Core 3.1+      6 horas       V
-    - Criação básica da estrutura             3 horas       V
-    - Aplicar ao banco de dados               2 horas       V
+
+    Title                                  | Time    
+    -------------------------------------- | ---------- 
+    Estudo da tecnologia NET Core 3.1+     | 6 horas
+    Criação básica da estrutura            | 3 horas
+    Aplicar ao banco de dados              | 2 horas
 
 
   ### Frontend
-    - Title                                   Time        Status
-    - Criação básica da estrutura HTML        4 horas       V
-    - Aplicação de estilização CSS            3 horas       V
-    - Conexão com o backend                   2 horas       V
+
+    Title                                   | Time    
+    --------------------------------------- | ---------
+    Criação básica da estrutura HTML        | 4 horas
+    Aplicação de estilização CSS            | 3 horas
+    Conexão com o backend                   | 2 horas
 
 
 ## Previsto para desenvolvimento
 
   ### Backend
-    - Estudar padrões no NET Core 3.1+
-    - Refatoração aplicando princípios SOLID
-    - Aplicar ordenação à lista de contatos
-    - Aplicar paginação à lista de contatos
+    + Estudar padrões no NET Core 3.1+
+    + Refatoração aplicando princípios SOLID
+    + Aplicar ordenação à lista de contatos
+    + Aplicar paginação à lista de contatos
 
   ### Frontend
-    - Aplicar styled-component em todos os componentes
-    - Aplicar animação ao exibir / ocultar formulário
-    - Aplicar ordenação à lista de contatos
-    - Aplicar paginação à lista de contatos
+    + Aplicar styled-component em todos os componentes
+    + Aplicar animação ao exibir / ocultar formulário
+    + Aplicar ordenação à lista de contatos
+    + Aplicar paginação à lista de contatos
 
   
