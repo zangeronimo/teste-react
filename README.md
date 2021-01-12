@@ -15,13 +15,17 @@
   Para o desenvolvimento foi utilizado o banco de dados relacional MariaDB, abaixo o código para criação 
   da tabela.
 
-  CREATE TABLE IF NOT EXISTS `contacts` (
-    `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(80) NOT NULL,
-    `email` VARCHAR(80) NOT NULL,
-    `birthday` VARCHAR(10) NOT NULL,
-    UNIQUE INDEX `id_UNIQUE` (`id` ASC))
-  ENGINE = InnoDB
+  CREATE TABLE `contacts` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(80) NOT NULL,
+    `email` varchar(80) NOT NULL,
+    `birth` date DEFAULT NULL,
+    `created_at` datetime DEFAULT NULL,
+    `updated_at` datetime DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `id_UNIQUE` (`id`),
+    UNIQUE KEY `email_UNIQUE` (`email`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4
 
 
 ## Cronograma de desenvolvimento
@@ -33,6 +37,8 @@
     Estudo da tecnologia NET Core 3.1+     | 6 horas
     Criação básica da estrutura            | 3 horas
     Aplicar ao banco de dados              | 2 horas
+    Alterado campo Birthday para Birth     | ...
+    Adicionado created_at e updated_at     | 1 hora
 
 
   ### Frontend
@@ -58,10 +64,5 @@
     + Aplicar ordenação à lista de contatos
     + Aplicar paginação à lista de contatos
     + Adicionar calendário na data de nascimento
-
-  ### Banco
-    + Renomear campo birthday, não está legal.
-    + Alterar campo birthday pra date
-    + Adicionar coluna created_at e updated_at
 
   
