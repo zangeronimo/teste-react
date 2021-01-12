@@ -16,7 +16,7 @@ interface FormData {
   id?: string;
   name: string;
   email: string;
-  birthday: string;
+  birth?: string;
 }
 
 const FormPage: React.FC = () => {
@@ -44,14 +44,16 @@ const FormPage: React.FC = () => {
           email: Yup.string()
             .required('E-mail obrigatório')
             .email('Digite um e-mail válido'),
-          birthday: Yup.string()
-            .min(10, 'Nascimento precisa ter 10 dígitos')
-            .max(10, 'Nascimento precisa ter 10 dígitos'),
         });
 
         await schema.validate(data, {
           abortEarly: false,
         });
+
+        // verifica se existe birth
+        if (!data.birth) {
+          delete data.birth;
+        }
 
         if (editContact.id) {
           const { id } = editContact;
@@ -96,7 +98,7 @@ const FormPage: React.FC = () => {
         <div className="fields">
           <Input name="name" placeholder="Nome" />
           <Input name="email" placeholder="E-mail" />
-          <Input name="birthday" placeholder="Seu Aniverário" />
+          <Input type="date" name="birth" placeholder="Data de Nascimento" />
         </div>
         <div className="tools">
           <button type="submit" className="save">

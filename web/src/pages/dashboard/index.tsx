@@ -11,7 +11,8 @@ export interface ContactData {
   id?: number;
   name: string;
   email: string;
-  birthday: string;
+  birth?: string;
+  formatedBirth?: string;
 }
 
 const Dashboard = () => {
@@ -24,7 +25,24 @@ const Dashboard = () => {
     api
       .get(`contacts${search}`)
       .then(result => {
-        setContacts(result.data);
+        const { data } = result;
+
+        const resultContacts = data.map((contact: ContactData) => {
+          // se birth, formata para padrão pt-BR e define em formatedBirth
+          if (contact.birth) {
+            const birth = new Intl.DateTimeFormat('pt-BR', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+            }).format(new Date(contact.birth));
+
+            contact.formatedBirth = birth;
+          }
+
+          return contact;
+        });
+
+        setContacts(resultContacts);
       })
       .catch(() => {
         addToast({

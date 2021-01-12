@@ -17,7 +17,7 @@ const Nav: React.FC = () => {
     setEditContact({
       name: '',
       email: '',
-      birthday: '',
+      birth: '',
     });
     show();
   }, [setEditContact, show]);

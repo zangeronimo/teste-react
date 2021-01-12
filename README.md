@@ -48,6 +48,7 @@
     Criação básica da estrutura HTML        | 4 horas
     Aplicação de estilização CSS            | 3 horas
     Conexão com o backend                   | 2 horas
+    Adição de campo tipo Data em Nascimento | 3 horas
 
 
 ## Previsto para desenvolvimento
@@ -63,6 +64,5 @@
     + Aplicar animação ao exibir / ocultar formulário
     + Aplicar ordenação à lista de contatos
     + Aplicar paginação à lista de contatos
-    + Adicionar calendário na data de nascimento
 
   

@@ -23,7 +23,16 @@ const ContactList: React.FC<ContactListProps> = ({ list }) => {
 
   const handleEdit = useCallback(
     (contact: ContactData) => {
-      setEditContact(contact);
+      // se existe birth, converte para padrão input type=Date
+      let { birth } = contact;
+      if (birth) {
+        birth = new Intl.DateTimeFormat('fr-ca', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        }).format(new Date(Date.parse(birth)));
+      }
+      setEditContact({ ...contact, birth });
       show();
     },
     [setEditContact, show],
@@ -84,7 +93,7 @@ const ContactList: React.FC<ContactListProps> = ({ list }) => {
                   {item.email}
                 </div>
                 <div className="cell" data-title="Nascimento">
-                  {item.birthday}
+                  {item.formatedBirth}
                 </div>
                 <div className="cell tools" data-title="">
                   <button
