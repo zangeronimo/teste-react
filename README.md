@@ -57,5 +57,10 @@
     + Aplicar animação ao exibir / ocultar formulário
     + Aplicar ordenação à lista de contatos
     + Aplicar paginação à lista de contatos
+    + Adicionar calendário na data de nascimento
+
+  ### Banco
+    + Alterar campo birthday pra date
+    + Adicionar coluna created_at e updated_at
 
   
