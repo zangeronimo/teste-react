@@ -15,12 +15,10 @@ namespace api.Models
         [MaxLength(80, ErrorMessage = "Este campo deve conter entre 3 e 80 caracteres")]
         public string Email { get; set; }
 
-        [MinLength(10, ErrorMessage = "Este campo deve conter 10 caracteres")]
-        [MaxLength(10, ErrorMessage = "Este campo deve conter 10 caracteres")]
-        public string Birthday { get; set; }
+        public DateTime? Birth { get; set; }
 
-        // public DateTime CreateDate { get; set; }
+        public DateTime? Created_at { get; set; }
 
-        // public DateTime LastUpdateDate { get; set; }
+        public DateTime? Updated_at { get; set; }
     }
 }

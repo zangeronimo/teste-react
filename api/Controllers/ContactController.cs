@@ -29,8 +29,7 @@ namespace api.Controllers
 
                     contacts = contacts
                         .Where(x => x.Name.ToLower().Contains(clause)
-                                || x.Email.ToLower().Contains(clause) 
-                                || x.Birthday.ToLower().Contains(clause));
+                                || x.Email.ToLower().Contains(clause));
                 }
 
                 return await contacts.ToListAsync();
@@ -49,9 +48,13 @@ namespace api.Controllers
             try {
                 if (ModelState.IsValid)
                 {
-                        context.contacts.Add(model);
-                        await context.SaveChangesAsync();
-                        return model;
+                    // Adiciono created_at e updated_at ao model
+                    model.Created_at = DateTime.Now;
+                    model.Updated_at = DateTime.Now;
+
+                    context.contacts.Add(model);
+                    await context.SaveChangesAsync();
+                    return model;
                 }
                 else
                 {
@@ -78,7 +81,10 @@ namespace api.Controllers
 
                 contact.Name = model.Name;
                 contact.Email = model.Email;
-                contact.Birthday = model.Birthday;
+                contact.Birth = model.Birth;
+
+                // Adiciono updated_at ao contato
+                contact.Updated_at = DateTime.Now;
 
                 context.contacts.Update(contact);
                 await context.SaveChangesAsync(); 
